@@ -7,10 +7,10 @@
  */
 
 // The names and URLs to all of the feeds we'd like available.
-var allFeeds = [
+var allFeeds= [
     {
         name: 'Udacity Blog',
-        url: 'http://blog.udacity.com/feed'
+        url:'http://blog.udacity.com/feed'
     }, {
         name: 'CSS Tricks',
         url: 'http://css-tricks.com/feed'
