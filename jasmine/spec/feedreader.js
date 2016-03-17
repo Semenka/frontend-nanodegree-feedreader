@@ -56,11 +56,9 @@ $(function() {
          */
         var menu=$(".slide-menu"),
             body=$("body"),
-            menuIcon=$(".menu-icon-link"),
-            menuHidden=$(".menu-hidden");
-
+            menuIcon=$(".menu-icon-link");
         it ('hidden by default', function(){
-            expect(body.hasClass(menuHidden.attr('class'))).toBeTruthy();
+            expect(body.attr('class')).toContain('menu-hidden');
         });
          /* Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
@@ -105,18 +103,13 @@ $(function() {
         beforeEach(function(done){
             loadFeed(1, function(){
                 content=$(".feed .entry").find('h2').text();
-                done();
-            });
-        });
-        beforeAll(function(done){
-            loadFeed(2,function(){
-                contentNew=$(".feed .entry").find('h2').text();
-                done();
+                loadFeed(2,function(){
+                    contentNew=$(".feed .entry").find('h2').text();
+                    done();
+                });
             });
         });
         it ("feed content changes", function(){
-            console.log(content);
-            console.log(contentNew);
             expect(content).not.toEqual(contentNew);
         });
     });
