@@ -57,8 +57,9 @@ $(function() {
         var menu=$(".slide-menu"),
             body=$("body"),
             menuIcon=$(".menu-icon-link");
+            menuHidden=$(".menu-hidden");
         it ('hidden by default', function(){
-            expect(body.attr('class')).toContain('menu-hidden');
+            expect(body.hasClass(menuHidden.attr('class'))).toBeTruthy();
         });
          /* Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
@@ -85,10 +86,9 @@ $(function() {
         beforeEach(function(done){
             loadFeed(0, done);
         });
-        it ("contain at least 1 element in the feed", function(done){
+        it ("contain at least 1 element in the feed", function(){
             var numEntries = $(".feed .entry").length;
             expect(numEntries).toBeGreaterThan(0);
-            done();
         });
     });
 
